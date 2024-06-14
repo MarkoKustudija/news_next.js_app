@@ -14,7 +14,6 @@ export default async function NewsDetailsPage({ params }: any) {
   if (!newsItem) {
     notFound();
   }
-  // to do -> add image cmp
   
   return (
     <article className="news-article">
