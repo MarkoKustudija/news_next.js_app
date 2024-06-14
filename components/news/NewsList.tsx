@@ -23,7 +23,7 @@ export default function NewsList({ news }: NewsProps) {
         {news.map((item, index) => (
           <li key={index}>
             <Link href={`/news/${item.slug}`}>
-              <img src="" alt="some image"/>
+              <img src={`/images/news/${item.image}`} alt={item.title}/>
               <span>{item.title}</span>
             </Link>
           </li>

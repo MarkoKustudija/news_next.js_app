@@ -9,20 +9,19 @@ export default async function NewsDetailsPage({ params }: any) {
   const slug = params.slug;
 
   // const newsItem = DUMMY_NEWS.find((newsItem) => (newsItem.slug === slug));
-
-
   const newsItem = await getNewsItem(slug);
 
   if (!newsItem) {
     notFound();
   }
-
-
   // to do -> add image cmp
   
   return (
     <article className="news-article">
       <header>
+        <Link href={`/news/${newsItem.slug}/image`} >
+        <img src={`/images/news/${newsItem.image}`} alt={newsItem.title}/>
+        </Link>
         <h1>{newsItem.title}</h1>
         <time dateTime={newsItem.date}>{newsItem.date}</time>
       </header>
