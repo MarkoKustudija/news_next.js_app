@@ -1,10 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export type NewsItemProps = {
   id?: string;
+  slug? : string;
   title: string;
-  text: string;
+  image: string;
+  date: string;
+  content: string;
 };
 
 export type NewsProps = {
@@ -14,12 +18,13 @@ export type NewsProps = {
 export default function NewsList({ news }: NewsProps) {
   return (
     <>
-      <ul>
+    <h1> News Page </h1>
+      <ul className="news-list">
         {news.map((item, index) => (
           <li key={index}>
-            <Link href={`/news/${item.id}`}>
-              <h1>{item.title}</h1>
-              <p>{item.text}</p>
+            <Link href={`/news/${item.slug}`}>
+              <img src="" alt="some image"/>
+              <span>{item.title}</span>
             </Link>
           </li>
         ))}
