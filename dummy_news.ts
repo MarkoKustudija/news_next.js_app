@@ -1,4 +1,14 @@
-export const DUMMY_NEWS = [
+export interface NewsArticle {
+  id: string;
+  slug: string;
+  title: string;
+  image: string;
+  content: string;
+  date: string;
+ 
+}
+
+export const DUMMY_NEWS : NewsArticle[] = [
     {
       id: 'n1',
       slug: 'will-ai-replace-humans',
